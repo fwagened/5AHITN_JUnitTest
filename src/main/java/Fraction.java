@@ -5,6 +5,7 @@ public class Fraction {
 
     //neuer versuch
 
+    //letzter versuch
 
 
     private int dividend = 1;
@@ -32,49 +33,55 @@ public class Fraction {
         this.divisor = divisor;
     }
 
-    /**
-
-    public Fraction add(Fraction other){
-        int n = (this.dividend * other.divisor) + other.dividend;
-        int z = (this.divisor * other.dividend);
-
-       return new Fraction(n, z);
+    public Fraction add(Fraction other) {
+        /**
+         * @ToDo
+         * Add this with other
+         */
+        Fraction newFraction = new Fraction((this.dividend * other.divisor) + (other.dividend * this.divisor), (this.divisor * other.divisor));
+        return newFraction;
     }
 
-    public Fraction subtract(Fraction other){
-        int n = (this.dividend * other.divisor) - other.dividend;
-        int z = (this.divisor * other.dividend);
-
-        return new Fraction(n, z);
+    public Fraction substract(Fraction other){
+        /**
+         * @ToDO
+         * Sub other from this
+         */
+        Fraction newFraction = new Fraction((this.dividend * other.divisor) - (other.dividend * this.divisor), (this.divisor * other.divisor));
+        return newFraction;
     }
 
     public Fraction multiply(Fraction other){
-       int n = this.dividend * other.dividend;
-       int z = this.divisor * other.divisor;
-
-        return new Fraction(n, z);
+        /**
+         * @ToDO
+         * Multiply other to this
+         */
+        Fraction newFraction = new Fraction((this.dividend * other.dividend), (this.divisor * other.divisor));
+        return newFraction;
     }
 
     public Fraction divide(Fraction other){
-       int n = this.dividend * other.divisor;
-       int z = this.divisor * other.dividend;
-
-        return new Fraction(n, z);
+        /**
+         * @ToDO
+         * Multiply this by other
+         */
+        Fraction newFraction = new Fraction((this.dividend * other.divisor), (this.divisor * other.dividend));
+        return newFraction;
     }
 
-    public static int gcd(int n, int z) {
-        return z == 0 ? n : gcd(z, n % z);
+    public Fraction shorten(){
+        /**
+         * @ToDO
+         * Shorten the fraction
+         */
+        int gcd = gcd(this.dividend, this.divisor);
+        Fraction newFraction = new Fraction((this.dividend / gcd), (this.divisor / gcd));
+        return newFraction;
     }
 
-    //public Fraction shorten(){
-      //  Fraction fraction = new Fraction(gcd(this.divisor, this.dividend));
-
-        //return fraction;
-    //}
-
-
-     */
-
+    public static int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
+    }
 
     @Override
     public String toString() {

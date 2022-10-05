@@ -35,8 +35,6 @@ class FractionTest {
     }
 
 
-
-
     @Test
     void testToString() {
         Fraction f = new Fraction(1, 10);
