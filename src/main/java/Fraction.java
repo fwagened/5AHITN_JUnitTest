@@ -3,9 +3,11 @@ public class Fraction {
 
     //testing new update
 
+    //neuer versuch
 
 
-    private int dividend = 0;
+
+    private int dividend = 1;
     private int divisor = 1;
 
     public Fraction(int dividend, int divisor) {
@@ -29,6 +31,8 @@ public class Fraction {
     public void setDivisor(int divisor) {
         this.divisor = divisor;
     }
+
+    /**
 
     public Fraction add(Fraction other){
         int n = (this.dividend * other.divisor) + other.dividend;
@@ -67,6 +71,10 @@ public class Fraction {
 
         //return fraction;
     //}
+
+
+     */
+
 
     @Override
     public String toString() {
