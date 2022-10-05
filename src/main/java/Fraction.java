@@ -35,7 +35,6 @@ public class Fraction {
 
     public Fraction add(Fraction other) {
         /**
-         * @ToDo
          * Add this with other
          */
         Fraction newFraction = new Fraction((this.dividend * other.divisor) + (other.dividend * this.divisor), (this.divisor * other.divisor));
@@ -44,7 +43,6 @@ public class Fraction {
 
     public Fraction substract(Fraction other){
         /**
-         * @ToDO
          * Sub other from this
          */
         Fraction newFraction = new Fraction((this.dividend * other.divisor) - (other.dividend * this.divisor), (this.divisor * other.divisor));
@@ -53,7 +51,6 @@ public class Fraction {
 
     public Fraction multiply(Fraction other){
         /**
-         * @ToDO
          * Multiply other to this
          */
         Fraction newFraction = new Fraction((this.dividend * other.dividend), (this.divisor * other.divisor));
@@ -62,7 +59,6 @@ public class Fraction {
 
     public Fraction divide(Fraction other){
         /**
-         * @ToDO
          * Multiply this by other
          */
         Fraction newFraction = new Fraction((this.dividend * other.divisor), (this.divisor * other.dividend));
@@ -71,7 +67,6 @@ public class Fraction {
 
     public Fraction shorten(){
         /**
-         * @ToDO
          * Shorten the fraction
          */
         int gcd = gcd(this.dividend, this.divisor);
