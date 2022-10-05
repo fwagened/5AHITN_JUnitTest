@@ -1,6 +1,10 @@
 public class Fraction {
     //test
 
+    //testing new update
+
+
+
     private int dividend = 0;
     private int divisor = 1;
 
@@ -27,40 +31,42 @@ public class Fraction {
     }
 
     public Fraction add(Fraction other){
-        /**
-         * Add this with other
-         */
-        return null;
+        int n = (this.dividend * other.divisor) + other.dividend;
+        int z = (this.divisor * other.dividend);
+
+       return new Fraction(n, z);
     }
 
     public Fraction subtract(Fraction other){
-        /**
-         * Subtract this from other
-         */
-        return null;
+        int n = (this.dividend * other.divisor) - other.dividend;
+        int z = (this.divisor * other.dividend);
+
+        return new Fraction(n, z);
     }
 
     public Fraction multiply(Fraction other){
-        /**
-         * multiply this from other
-         */
-        return null;
+       int n = this.dividend * other.dividend;
+       int z = this.divisor * other.divisor;
+
+        return new Fraction(n, z);
     }
 
     public Fraction divide(Fraction other){
-        /**
-         * divide this from other
-         */
-        return null;
+       int n = this.dividend * other.divisor;
+       int z = this.divisor * other.dividend;
+
+        return new Fraction(n, z);
     }
 
-    public Fraction shorten(){
-        /**
-         * Shorten this fraction
-         */
-
-        return null;
+    public static int gcd(int n, int z) {
+        return z == 0 ? n : gcd(z, n % z);
     }
+
+    //public Fraction shorten(){
+      //  Fraction fraction = new Fraction(gcd(this.divisor, this.dividend));
+
+        //return fraction;
+    //}
 
     @Override
     public String toString() {
