@@ -6,6 +6,8 @@ public class Fraction {
     //neuer versuch
 
     //letzter versuch
+    
+    //neuer Versuch
 
 
     private int dividend = 1;
