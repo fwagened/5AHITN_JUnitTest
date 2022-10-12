@@ -9,6 +9,8 @@ public class Fraction {
     
     //neuer Versuch
 
+    //schauen ob Action geht
+
 
     private int dividend = 1;
     private int divisor = 1;
