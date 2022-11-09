@@ -4,10 +4,7 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.ThrowingSupplier;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 
 class FractionTest {
@@ -55,6 +52,100 @@ class FractionTest {
 
         });
     }
+
+    @Test
+    @Order(3)
+    void connectToSpecificDatabase(){
+        Assertions.assertDoesNotThrow(() -> connect("testdb"));
+    }
+
+    @Test
+    @Order(4)
+    void createTable(){
+        Assertions.assertDoesNotThrow(() -> {
+            Connection c = connect("testdb");
+
+            Statement s = c.createStatement();
+            s.executeUpdate("CREATE TABLE testTable (mycolumn VARCHAR(255) NULL)");
+
+            s.close();
+            c.close();
+
+        });
+    }
+
+    @Test
+    @Order(5)
+    void insertIntoTable(){
+        Assertions.assertDoesNotThrow(() -> {
+            Connection c = connect("testdb");
+            Statement s = c.createStatement();
+            s.executeUpdate("INSERT INTO testTable (mycolumn) VALUES (some text )");
+
+            s.close();
+            c.close();
+
+        });
+    }
+
+    @Test
+    @Order(6)
+    void selectFromTable(){
+        Assertions.assertDoesNotThrow(() -> {
+            Connection c = connect("testdb");
+
+            Statement s = c.createStatement();
+            ResultSet res = s.executeQuery("SELECT * FROM testTable LIMIT 1");
+
+            if (res.first()) {
+                Assertions.assertEquals(res.getString("mycolumn"), "some text");
+            }
+
+            s.close();
+            c.close();
+
+        });
+    }
+
+    @Test
+    @Order(7)
+    void deleteFromTable(){
+        Assertions.assertDoesNotThrow(() -> {
+            Connection c = connect(" ");
+
+            Statement s = c.createStatement();
+            ResultSet res = s.executeQuery("DELETE FROM testTable WHERE (mycolumn = 'some text')");
+
+            if (res.first()) {
+                Assertions.assertEquals(res.getString(" "), " ");
+            }
+
+            s.close();
+            c.close();
+
+        });
+    }
+
+    @Test
+    @Order(8)
+    void dropTable(){
+        Assertions.assertDoesNotThrow(() -> {
+            Connection c = connect(" ");
+
+            Statement s = c.createStatement();
+            ResultSet res = s.executeQuery("DROP TABLE testTable");
+
+            if (res.first()) {
+                Assertions.assertEquals(res.getString(" "), " ");
+            }
+
+            s.close();
+            c.close();
+
+        });
+    }
+
+
 
 
     //@Test
