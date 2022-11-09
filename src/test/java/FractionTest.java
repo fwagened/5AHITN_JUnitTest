@@ -27,7 +27,7 @@ class FractionTest {
         Connection conn = null;
 
         if (db.length() <= 0) {
-            conn = DriverManager.getConnection("jdbc:postgresql://localhost:3306/", "root", "root");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "root", "root");
 
         } else {
             conn = DriverManager.getConnection("jdbc.mysql://localhost:3306/" + db, "root", "root");
