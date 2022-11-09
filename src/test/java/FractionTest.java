@@ -30,7 +30,7 @@ class FractionTest {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "root", "root");
 
         } else {
-            conn = DriverManager.getConnection("jdbc.mysql://localhost:3306/" + db, "root", "root");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + db, "root", "root");
         }
 
         return conn;
