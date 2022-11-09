@@ -48,7 +48,7 @@ class FractionTest {
         Assertions.assertDoesNotThrow(() -> {
             Connection c = connect(" ");
             Statement s = c.createStatement();
-            s.executeUpdate("CREATE DATABASE testdb");
+            s.executeUpdate("CREATE DATABASE databasedb");
 
             s.close();
             c.close();
