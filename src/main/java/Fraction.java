@@ -1,15 +1,7 @@
+import java.sql.Connection;
+import java.sql.*;
+
 public class Fraction {
-    //test
-
-    //testing new update
-
-    //neuer versuch
-
-    //letzter versuch
-    
-    //neuer Versuch
-
-    //schauen ob Action geht
 
 
     private int dividend = 1;
@@ -86,4 +78,32 @@ public class Fraction {
     public String toString() {
         return this.dividend + " / " + this.divisor;
     }
+
+
+    //MySQL JDBC Connection
+    /**
+     * 1) Verbindung zu MySQL (JDBC)
+     * 2) Erstellen einer DB
+     * 3) Erstellen einer Tabelle (mit einem Feld)
+     * 4) Einfügen eines Datnesatzes in der Tabelle
+     * 5) Auslesen eines Datensatzes
+     */
+
+    static {
+        try {
+            String driver = "com.mysql.jdbc.Driver";
+
+            Class.forName(driver);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    Connection connection = null;
+
+
+
+
+
 }
